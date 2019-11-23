@@ -17,7 +17,8 @@
 //
 namespace valid_subarrays_1063 {
 
-    inline std::string printPosition(const std::vector<int>& values, int position) {
+    template<typename STREAMABLE>
+    inline std::string printPosition(const std::vector<STREAMABLE>& values, int position) {
         std::stringstream valueString;
         std::stringstream arrowHead;
         int idx = 0;
@@ -50,7 +51,8 @@ namespace valid_subarrays_1063 {
         return output;
     }
 
-    inline std::string printStack(std::stack<int> stk) {
+    template<typename STREAMABLE>
+    inline std::string printStack(std::stack<STREAMABLE> stk) {
         std::vector<int> values;
         while(!stk.empty()) {
             values.push_back(stk.top());
@@ -86,6 +88,7 @@ namespace valid_subarrays_1063 {
                 }
                 stk.push(n);
                 std::cout << "idx: "<< idx << ", n: " << n << ", stack pushed: " << printStack(stk) << std::endl;
+                std::cout << "res += stk.size(); ~~ res = (" << res << ") + (" << stk.size() << ") => " << res + stk.size() << std::endl;
                 res += stk.size();
                 ++idx;
             }
@@ -103,13 +106,13 @@ TEST_CASE("valid_subarrays_01") {
     CHECK( expected == actual );
 }
 
-TEST_CASE("valid_subarrays_02") {
-    using namespace valid_subarrays_1063;
-    Solution s;
-    std::vector<int> nums = {5, 4, 1, 3, 2};
-    const auto expected = 7;
-    const auto actual = s.validSubarrays(nums);
-    CHECK( expected == actual );
-}
+//TEST_CASE("valid_subarrays_02") {
+//    using namespace valid_subarrays_1063;
+//    Solution s;
+//    std::vector<int> nums = {5, 4, 1, 3, 2};
+//    const auto expected = 7;
+//    const auto actual = s.validSubarrays(nums);
+//    CHECK( expected == actual );
+//}
 
 #endif
