@@ -1,2 +1,3 @@
 #pragma once
-#define RUN 1063
+//#define RUN 1192
+#define RUN_ALL
