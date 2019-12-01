@@ -98,4 +98,22 @@ namespace leet {
     inline std::string sep(const std::string& message) {
         return sep(DEFAUJLT_SEP_SIZE, message);
     }
+
+    template <typename T>
+    inline bool operator==(const std::vector<T>& left, const std::vector<T>& right) {
+        if(left.size() != right.size()) {
+            return false;
+        }
+        for(size_t i = 0; i < left.size(); ++i) {
+            if(left[i] != right[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    template <typename T>
+    inline bool operator!=(const std::vector<T>& left, const std::vector<T>& right) {
+        return !(left == right);
+    }
 }

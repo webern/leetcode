@@ -11,3 +11,7 @@ This labeled as 'easy' but I had to look up the solution:
  
  omg this is huge
  https://www.youtube.com/channel/UCmJz2DV1a3yfgrR7GqRtUUA/playlists
+
+## Graph Problems to Revisit
+
+* [1192. Critical Connections in Network](https://leetcode.com/problems/critical-connections-in-a-network/): Too hard for me. Need to learn Tarjan's algorithm then figure out how to use for this. Found this video, [Bridges in a Graph](https://youtu.be/thLQYBlz2DM).
